@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Home Integration | Venus MEP</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: #f5f7fa;
+    }
+    header {
+      background: url('https://iotbusinessnews.com/WordPress/wp-content/uploads/2023/01/iot-for-smart-homes.jpg') center/cover no-repeat;
+      height: 40vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    header .content {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 2rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .service-box {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .service-box img {
+  height: 80px; /* increased from 50px */
+  width: 80px;  /* optional: ensures it scales proportionally */
+  margin-bottom: 1rem;
+}
+
+    .service-box h3 {
+      margin-bottom: 1rem;
+      color: #ff6f00;
+    }
+
+  </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/product.html">Our Products</a></li>
+            <li><a href="../pages/services.html" class="active">Our Services</a></li>
+            <li><a href="../pages/blogs.html">Blogs</a></li>
+        </ul>
+      </nav>
+    
+      <a href="../pages/contact.html" class="contact-btn-standalone" onclick="navigateTo('../pages/contact.html')">
+        <i class="fas fa-envelope"></i> Get in Touch
+        <i class="header__btn-dots"><span></span><span></span><span></span></i>
+    </a>
+  <header>
+    <div class="content">
+      <h1>Smart Home Integration</h1>
+      <p>Control. Comfort. Security. All in One App.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Our Smart Solutions</h2>
+    <div class="services">
+      <div class="service-box">
+        <img src="https://img.icons8.com/ios/50/light-on--v1.png" alt="Lighting">
+        <h3>Smart Lighting</h3>
+        <p>Automated lighting scenes that save energy and set the perfect mood.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://www.shutterstock.com/image-vector/water-temperature-indicator-line-icon-600nw-2260603767.jpg" alt="Climate">
+        <h3>Climate Control</h3>
+        <p>Stay comfortable with temperature systems that learn your habits.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://img.freepik.com/premium-vector/cyber-secur…con-symbol-white-background_268104-9264.jpg" alt="Security">
+        <h3>Smart Security</h3>
+        <p>Real-time surveillance, smart locks, and alerts to keep you safe.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://img.icons8.com/ios/50/musical-notes.png" alt="Audio Video">
+        <h3>Multi-Room AV</h3>
+        <p>Stream music or video throughout your home with ease and control.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://img.icons8.com/ios/50/voice-recognition-scan.png" alt="Voice">
+        <h3>Voice & App Control</h3>
+        <p>Control everything using Alexa, Google Assistant, or Apple Siri.</p>
+      </div>
+      <div class="service-box">
+        <img src="	https://t4.ftcdn.net/jpg/13/82/24/29/360_F_1382242981_jiOKpkZDsIfDvIKEeYoNRYxydXrO7Jb2.jpg" alt="Automation">
+        <h3>Automation & Scheduling</h3>
+        <p>Set schedules for lights, appliances, and more to automate your home.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <section class="footer-section">
+        <div class="company-content">
+          <img src="logo.png" alt="Company Logo" class="company-logo">
+          <p class="company-description">
+            We help businesses grow by delivering high-quality, innovative solutions tailored to your needs.
+          </p>
+          <a href="../index.html" class="know-more-btn">Know More</a>
+        </div>
+
+        <div class="important-links">
+          <h3>Important Links</h3>
+          <ul>
+            <li><a href="../index.html"><strong>Home</strong></a></li>
+            <li><a href="../pages/product.html"><strong>Our Products</strong></a></li>
+            <li><a href="../pages/services.html"><strong>Our Services</strong></a></li>
+            <li><a href="../pages/blogs.html"><strong>Blogs</strong></a></li>
+          </ul>
+        </div>
+
+        <div class="office-section">
+          <h3>Office Details</h3>
+          <div class="office-details">
+            <p><strong>Address:</strong> SMARTHINKING Technology and Solutions Pvt Ltd 545-A, Boulevard Tower, Sadhu Vaswani Chowk, Agarka Nagar, Pune, Maharashtra, 411001</p>
+            <p><strong>Landline:</strong> 02069015368</p>
+            <p><strong>Email:</strong> info@smarthinking.in</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 SMARTHINKING Technology and Solutions Pvt Ltd. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

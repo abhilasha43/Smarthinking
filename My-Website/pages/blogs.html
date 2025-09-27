@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogs - SMARTHINKING</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="blogs.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  <style>
+
+    /* Dropdown Container for Header and Footer */
+.header-content nav ul .dropdown,
+.custom-footer .important-links ul .dropdown {
+    position: relative;
+    display: inline-block; /* Adjust if your list items are block level and you want this behavior */
+}
+
+/* Dropdown Content (Hidden by Default) for Header and Footer */
+.header-content nav ul .dropdown-content,
+.custom-footer .important-links ul .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Or your preferred background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100; /* Ensure it's above other content */
+    border-radius: 5px;
+    top: 100%; /* Position below the parent link */
+    left: 0;
+}
+
+/* Links inside the dropdown for Header and Footer */
+.header-content nav ul .dropdown-content a,
+.custom-footer .important-links ul .dropdown-content a {
+    color: black; /* Or your preferred link color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 0.95em;
+}
+
+/* Change color of dropdown links on hover for Header and Footer */
+.header-content nav ul .dropdown-content a:hover,
+.custom-footer .important-links ul .dropdown-content a:hover {
+    background-color: #f1f1f1; /* Or your preferred hover background */
+    color: #007bff; /* Primary blue for hover, or your theme color */
+}
+
+/* Show the dropdown menu on hover for Header and Footer */
+.header-content nav ul .dropdown:hover .dropdown-content,
+.custom-footer .important-links ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Adjustments for the caret icon for Header and Footer */
+.header-content nav ul .dropdown .fa-caret-down,
+.custom-footer .important-links ul .dropdown .fa-caret-down {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.header-content nav ul .dropdown:hover .fa-caret-down,
+.custom-footer .important-links ul .dropdown:hover .fa-caret-down {
+    transform: rotate(180deg);
+}
+  </style>
+
+    <header class="header-content fixed">
+        <a href="../index.html" class="logo-overlay"> <!-- Corrected href to go to root index -->
+           <img src="../images/smart.png" alt="Company Logo" class="company-logo">
+        </a>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="product.html">Our Products</a></li>
+      <li class="dropdown"> <!-- Added dropdown class -->
+            <a href="#">Our Services <i class="fas fa-caret-down"></i></a> <!-- Changed to a="#" and added caret icon -->
+            <div class="dropdown-content">
+                <a href="services.html#web-development">Web Development</a>
+                <a href="services.html#iot-solutions">IOT Solutions</a>
+                <a href="services.html#digital-marketing">Digital Marketing</a>
+                <a href="services.html#graphic-design">Graphic Design</a>
+            </div>
+        </li>
+      <li><a href="blogs.html">Blogs</a></li>
+    </ul>
+  </nav>
+  <a href="../pages/contact.html" class="contact-btn-standalone" onclick="navigateTo('../pages/contact.html')">
+    <i class="fas fa-envelope"></i> Get in Touch
+    <i class="header__btn-dots"><span></span><span></span><span></span></i>
+</a>
+    <!-- Hero Section with background image and overlay text -->
+    <section class="blog-hero" style="background-image: url('https://img.freepik.com/free-vector/circuits-blue-red-gradient-digital-background_23-2148821701.jpg');">
+      <div class="hero-overlay">
+        <h1>Welcome to Our Blog</h1>
+        <p>Dive into insights, innovations, and ideas around IoTDB and smart technologies.</p>
+      </div>
+    </section>
+  <main>
+    <section class="blog-fusion-boxes">
+
+     <!-- Blog 1 -->
+<div class="fusion-box" style="background-image: url('https://iotfactory.eu/wp-content/uploads/2025/02/lorawan-smart-building-backbone.jpg');">
+  <div class="overlay">
+    <h3>IoTDB Architecture: Building Scalable Solutions</h3>
+    <p>Learn how IoTDB's unique design ensures efficient storage and retrieval of time-series data.</p>
+    <a href="architecture.html" class="know-more-btn">Know More</a>
+  </div>
+</div>
+<!-- Blog 2 -->
+<div class="fusion-box" style="background-image: url('https://i.pinimg.com/originals/7c/02/dc/7c02dccfa429e69d9109bed338e2a3c5.png');">
+  <div class="overlay">
+    <h3>High-Performance Ingestion</h3>
+    <p>Explore how IoTDB handles massive data ingestion with speed and efficiency.</p>
+    <a href="ingestion.html" class="know-more-btn">Know More</a>
+  </div>
+</div>
+<!-- Blog 3 -->
+<div class="fusion-box" style="background-image: url('https://mccnh.edu/wp-content/uploads/2023/08/SAM-MATH-Applied-Data-Analytics-Cert-5269.jpg');">
+  <div class="overlay">
+    <h3>Real-Time Analytics</h3>
+    <p>Gain instant insights from your IoT data for faster business decisions.</p>
+    <a href="analytics.html" class="know-more-btn">Know More</a>
+  </div>
+</div>
+<!-- Blog 4 -->
+<div class="fusion-box" style="background-image: url('https://www.shutterstock.com/image-photo/data-compression-concept-person-typing-600nw-2328107651.jpg');">
+  <div class="overlay">
+    <h3>Data Compression in IoTDB</h3>
+    <p>Learn how advanced compression reduces storage costs for IoT data.</p>
+    <a href="compression.html" class="know-more-btn">Know More</a>
+  </div>
+</div>
+<!-- Blog 5 -->
+<div class="fusion-box" style="background-image: url('https://t4.ftcdn.net/jpg/02/45/87/37/360_F_245873778_UM6zQi2VFOWc6Eswb1daIZA4Sr8h8WuT.jpg');">
+  <div class="overlay">
+    <h3>Edge Computing with IoTDB</h3>
+    <p>Discover how edge computing combined with IoTDB enhances real-time data processing and reduces latency.</p>
+    <a href="edge.html" class="know-more-btn">Know More</a>
+  </div>
+</div>
+    </section>
+  </main>
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <section class="footer-section">
+        <div class="company-content">
+          <img src="../images/smart.png" alt=" Logo" class="logo">
+          <p class="company-description">
+            We help businesses grow by delivering high-quality, innovative solutions tailored to your needs.
+          </p>
+          <a href="../index.html" class="know-more-btn">Know More</a>
+        </div>
+        <div class="important-links">
+          <h3>Important Links</h3>
+          <ul>
+            <li><a href="../index.html"><strong>Home</strong></a></li>
+            <li><a href="../pages/product.html"><strong>Our Products</strong></a></li>
+            <li class="dropdown"> <!-- Added dropdown class -->
+              <a href="#">Our Services</a> <!-- Added caret icon -->
+              <div class="dropdown-content">
+                  <a href="services.html#web-development">Web Development</a>
+                  <a href="services.html#iot-solutions">IOT Solutions</a>
+                  <a href="services.html#digital-marketing">Digital Marketing</a>
+                  <a href="services.html#graphic-design">Graphic Design</a>
+              </div>
+            </li>
+            <li><a href="../pages/blogs.html"><strong>Blogs</strong></a></li>
+          </ul>
+        </div>
+        <div class="office-section">
+          <h3>Office Details</h3>
+          <div class="office-details">
+            <p><strong>Address:</strong> SMARTHINKING Technology and Solutions Pvt Ltd 545-A, Boulevard Tower, Sadhu Vaswani Chowk, Agarka Nagar, Pune, Maharashtra, 411001</p>
+            <p><strong>Landline:</strong> 02069015368</p>
+            <p><strong>Email:</strong> info@smarthinking.in</p>
+          </div>
+        </div>
+      </section>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SMARTHINKING Technology and Solutions Pvt Ltd. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

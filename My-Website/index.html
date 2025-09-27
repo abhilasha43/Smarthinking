@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMARTHINKING</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+ <style>
+    .services-section {
+        position: relative;
+        width: 100%;
+        min-height: 80vh; /* Adjust height as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+        overflow: hidden;
+        background-color: #ffffff; /* Fallback dark overlay */
+        box-sizing: border-box; /* Include padding in element's total width and height */
+    }
+
+    .services-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://via.placeholder.com/1920x1080/0000FF/808080?text=Main+Background'); /* Replace with your desired MAIN background image URL */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(0.7); /* Slightly less dark for better overall visibility, adjusted from 0.5 */
+        z-index: -1;
+    }
+
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 5%;
+        padding: 20px;
+        z-index: 1; /* Ensure content is above the background overlay */
+        box-sizing: border-box;
+    }
+
+    .service-box {
+        position: relative; /* Needed for positioning the internal background image */
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 500px; /* Ensure consistent box height */
+        overflow: hidden; /* Hide overflowing background image parts */
+        box-sizing: border-box;
+    }
+
+    .service-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover; /* Adjust as needed: cover, contain, 100% 100% */
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0; /* Place behind actual content */
+    }
+
+    /* Specific background images for each box */
+    .service-box.web-dev::before {
+        background-image: url(images/iot.jpg);
+    }
+    .service-box.mobile-app::before {
+        background-image: url('images/aii.jpg');
+    }
+    .service-box.digital-marketing::before {
+        background-image: url('images/cr.jpg');
+    }
+    .service-box.graphic-design::before {
+        background-image: url('images/el.jpg');
+    }
+
+    .service-box > * { /* Target all direct children of service-box to place them above the ::before */
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(240, 232, 232, 0.3);
+    }
+
+    .service-box h3 {
+        color: #ffffff;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .service-box p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #ffffff;
+        flex-grow: 1; /* Allow paragraph to take up available space */
+        margin-top: 60%;
+    }
+
+    .know-more-btn {
+        display: inline-block;
+        background-color: #28a745; /* Green button */
+        color: #fff;
+        padding: 8px 20px;
+        width: 45%;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: auto; /* Push button to the bottom */
+        box-sizing: border-box;
+    }
+
+    .know-more-btn:hover {
+        background-color: #218838; /* Darker green on hover */
+        transform: translateY(-2px);
+    }
+
+    /* Dropdown Container */
+    .main-nav .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .main-nav .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 100; /* Ensure it's above other content */
+        border-radius: 5px;
+        top: 100%; /* Position below the parent link */
+        left: 0;
+    }
+
+    /* Links inside the dropdown */
+    .main-nav .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        white-space: nowrap; /* Prevent text wrapping */
+        font-size: 0.95em;
+    }
+
+    /* Change color of dropdown links on hover */
+    .main-nav .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        color: #007bff; /* Primary blue for hover */
+    }
+
+    /* Show the dropdown menu on hover */
+    .main-nav .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Adjustments for the caret icon */
+    .main-nav .dropdown .fa-caret-down {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .main-nav .dropdown:hover .fa-caret-down {
+        transform: rotate(180deg);
+    }
+
+    /* --- Media Queries for Responsiveness --- */
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        .services-container {
+            max-width: 1140px;
+            padding: 30px 0;
+        }
+        .service-box {
+            min-height: 520px; /* Slightly taller boxes for larger screens */
+        }
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .services-container {
+            max-width: 960px;
+            padding: 25px;
+        }
+        .service-box {
+            min-height: 480px;
+        }
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .services-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+            gap: 25px;
+            padding: 20px;
+            margin-top: 3%; /* Adjust margin for smaller screens */
+        }
+        .service-box {
+            min-height: 450px;
+            padding: 25px;
+        }
+        .service-box h3 {
+            font-size: 1.6em;
+        }
+        .service-box p {
+            font-size: 1em;
+            margin-top: 50%; /* Adjust text position if needed */
+        }
+        .know-more-btn {
+            width: 60%; /* Make button wider on tablets */
+            padding: 10px 20px;
+        }
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .services-container {
+            grid-template-columns: 1fr; /* Stack boxes on smaller tablets/large phones */
+            gap: 20px;
+            padding: 15px;
+            margin-top: 2%;
+        }
+        .services-section {
+            padding: 30px 0;
+            min-height: auto; /* Allow height to adjust based on content */
+        }
+        .service-box {
+            min-height: 400px; /* Adjust height for single column layout */
+            padding: 20px;
+        }
+        .service-box h3 {
+            font-size: 1.5em;
+        }
+        .service-box p {
+            font-size: 0.95em;
+            margin-top: 40%;
+        }
+        .know-more-btn {
+            width: 70%;
+            padding: 10px 15px;
+        }
+    }
+
+    /* Extra small devices (portrait phones, less than 576px) */
+    @media (max-width: 575.98px) {
+        .services-container {
+            grid-template-columns: 1fr; /* Always one column on very small screens */
+            gap: 15px;
+            padding: 10px;
+            margin-top: 1%;
+        }
+        .services-section {
+            padding: 20px 0;
+            min-height: auto;
+        }
+        .service-box {
+            min-height: 350px; /* Further reduce height for mobile */
+            padding: 15px;
+        }
+        .service-box h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .service-box p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-top: 35%; /* Adjust for better readability */
+        }
+        .know-more-btn {
+            width: 80%;
+            padding: 8px 12px;
+            font-size: 0.9em;
+        }
+        /* Adjust dropdown for mobile if needed, though typically navigation is handled differently on mobile (e.g., hamburger menu) */
+        .main-nav .dropdown-content {
+            min-width: 140px;
+            left: unset;
+            right: 0; /* Align dropdown to the right if space is an issue */
+        }
+        .main-nav .dropdown-content a {
+            padding: 10px 12px;
+            font-size: 0.9em;
+        }
+    }
+</style>
+    <header class="header-content fixed">
+        <a href="index.html" class="logo-overlay">
+           <img src="images/smart.png" alt="Company Logo" class="company-logo">
+        </a>
+        <nav class="main-nav">
+    <ul>
+        <li><a href="index.html" onclick="navigateTo('index.html')">Home</a></li>
+        <li><a href="pages/product.html" onclick="navigateTo('pages/product.html')">Our Products</a></li>
+        <li class="dropdown">
+            <a onclick="navigateTo('pages/services.html')">Our Services <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="#web-development">Web Development</a>
+                <a href="#iot-solutions">IOT Solutions</a>
+                <a href="#digital-marketing">Digital Marketing</a>
+                <a href="#graphic-design">Graphic Design</a>
+            </div>
+        </li>
+        <li><a href="pages/blogs.html" onclick="navigateTo('pages/blogs.html')">Blogs</a></li>
+    </ul>
+</nav>
+        <a href="pages/contact.html" class="contact-btn-standalone" onclick="navigateTo('pages/contact.html')">
+            <i class="fas fa-envelope"></i> Get in Touch
+            <i class="header__btn-dots"><span></span><span></span><span></span></i>
+        </a>
+    </header>
+    <!-- Explore Electronics Section with Background Video -->
+<section class="explore-electronics">
+    <img src="images/ai.jpeg" alt="Dynamic background of modern electronics" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1;">
+    <div class="content">
+        <h2>Smart AI & IOT Solutions</h2>
+        <h1>Built for your Industry</h1>
+        <p>AIoT is the integration of Artificial Intelligence technologies into </p>
+        <p> IoT infrastructure. It enables a connected network of devices to </p>
+            <p> not only collect data but also to analyze it, learn from it, and </p>
+            <p>make intelligent decisions autonomously.</p>
+    </div>
+</section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+        <div class="container">
+            <h2>What We Do</h2>
+            <p>We provide cutting-edge technology and innovative solutions that help you stay ahead in the fast-evolving world of electronics. Our services are designed to streamline your experience and offer seamless integration across devices.</p>
+        </div>
+    </section>
+
+ <section class="services-section">
+              <h2 style="color: black; text-decoration: underline; margin-top: -56%; margin-left: 1%; position: absolute; font-size: 38px;">Our Sevices</h2>
+        <div class="services-container">
+            <div class="service-box web-dev">
+                <h3>IOT Solutions </h3>
+                <p>From concept to launch, we design intuitive and engaging mobile applications for iOS and Android, bringing your ideas to life with elegant interfaces.</p>
+                <a href="#" class="know-more-btn">Know More</a>
+            </div>
+
+            <div class="service-box mobile-app">
+                <h3>Artificial Intelligence </h3>
+                <p>From concept to launch, we design intuitive and engaging mobile applications for iOS and Android, bringing your ideas to life with elegant interfaces.</p>
+                <a href="#" class="know-more-btn">Know More</a>
+            </div>
+
+            <div class="service-box digital-marketing">
+                <h3>Digital Marketing</h3>
+                <p>Boost your online presence and reach your target audience with our comprehensive digital marketing strategies, including SEO, social media, and content marketing.</p>
+                <a href="#" class="know-more-btn">Know More</a>
+            </div>
+
+            <div class="service-box graphic-design">
+                <h3>Graphic Design</h3>
+                <p>Create a strong brand identity with our professional graphic design services, including logo design, branding guidelines, and marketing collateral.</p>
+                <a href="#" class="know-more-btn">Know More</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Demo Video Section -->
+  <section class="demo-video">
+    <div class="container">
+        <div class="video-wrapper">
+        <video width="560" height="315" controls>
+            <source src="video/3pin.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+        <div class="video-description">
+            <h3>Empowering Your Growth with the Power of SmarThinking</h3>
+        </div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="custom-footer">
+    <div class="footer-container">
+      <section class="footer-section">
+         <!-- Company Info -->
+         <div class="company-content">
+            <img src="images/smart.png" alt="Company Logo" class="company-logo">
+            <p class="company-description">
+              We help businesses grow by delivering high-quality, innovative solutions tailored to your needs.
+            </p>
+            <a href="index.html" class="know-more-btn">Know More</a>
+          </div>
+         <!-- Important Links -->
+           <div class="important-links">
+             <h3>Important Links</h3>
+         <ul>
+              <li><a href="index.html"><strong>Home</strong></a></li>
+              <li><a href="pages/product.html"><strong>Our Products</strong></a></li>
+              <li><a href="pages/services.html"><strong>Our Services</strong></a>
+            </li>
+              <li><a href="pages/blogs.html"><strong>Blogs</strong></a></li>
+        </ul>
+    </div>
+       <!-- Office Details -->
+        <div class="office-section">
+          <h3>Office Details</h3>
+          <div class="office-details">
+            <p><strong>Address:</strong> SMARTHINKING Technology and Solutions Pvt Ltd 545-A, Boulevard Tower, Sadhu Vaswani Chowk, Agarka Nagar, Pune, Maharashtra, 411001</p>
+            <p><strong>Landline:</strong>  02069015368</p>
+            <p><strong>Email:</strong> info@smarthinking.in</p>
+          </div>
+        </div>
+      </section>
+      <!-- Bottom Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SMARTHINKING Technology and Solutions Pvt Ltd. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

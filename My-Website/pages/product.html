@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - SMARTHINKING</title>
+    <link rel="stylesheet" href="product.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <style>
+        /* Dropdown Container */
+.nav-header nav ul .dropdown,
+.custom-footer .important-links ul .dropdown { /* Apply to both header and footer dropdowns */
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.nav-header nav ul .dropdown-content,
+.custom-footer .important-links ul .dropdown-content { /* Apply to both header and footer dropdowns */
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100; /* Ensure it's above other content */
+    border-radius: 5px;
+    top: 100%; /* Position below the parent link */
+    left: 0;
+}
+
+/* Links inside the dropdown */
+.nav-header nav ul .dropdown-content a,
+.custom-footer .important-links ul .dropdown-content a { /* Apply to both header and footer dropdowns */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 0.95em;
+}
+
+/* Change color of dropdown links on hover */
+.nav-header nav ul .dropdown-content a:hover,
+.custom-footer .important-links ul .dropdown-content a:hover { /* Apply to both header and footer dropdowns */
+    background-color: #f1f1f1;
+    color: #007bff; /* Primary blue for hover */
+}
+
+/* Show the dropdown menu on hover */
+.nav-header nav ul .dropdown:hover .dropdown-content,
+.custom-footer .important-links ul .dropdown:hover .dropdown-content { /* Apply to both header and footer dropdowns */
+    display: block;
+}
+
+/* Adjustments for the caret icon */
+.nav-header nav ul .dropdown .fa-caret-down,
+.custom-footer .important-links ul .dropdown .fa-caret-down { /* Apply to both header and footer dropdowns */
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-header nav ul .dropdown:hover .fa-caret-down,
+.custom-footer .important-links ul .dropdown:hover .fa-caret-down { /* Apply to both header and footer dropdowns */
+    transform: rotate(180deg);
+}
+
+
+    </style>
+         <div class="nav-header">
+        <a href="../index.html" class="logo-link">
+            <img src="../images/smart.png" alt="Company Logo" class="company-logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="product.html">Our Products</a> </li>
+                <li class="dropdown">
+                    <a>Our Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="services.html#web-development">Web Development</a>
+                        <a href="services.html#iot-solutions">IOT Solutions</a>
+                        <a href="services.html#digital-marketing">Digital Marketing</a>
+                        <a href="services.html#graphic-design">Graphic Design</a>
+                    </div>
+                </li>
+                <li><a href="blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    </div>
+    <a href="../pages/contact.html" class="contact-btn-standalone" onclick="navigateTo('../pages/contact.html')">
+        <i class="fas fa-envelope"></i> Get in Touch
+        <i class="header__btn-dots"><span></span><span></span><span></span></i>
+    </a>
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="hero-content">
+            <h1>Our Innovative Products</h1>
+            <p>Discover our cutting-edge technology solutions</p>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <div class="container">
+            <h2>Our Product Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="../images/three pin.png" alt="Three Pin Products">
+                    </div>
+                    <h3>Three Pin Products</h3>
+                    <p>High-quality three pin solutions for industrial applications</p>
+                    <a href="product-details.html#three-pin" class="category-btn">View Products</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="../images/top.png" alt="Single Pin Products">
+                    </div>
+                    <h3>Single Pin Products</h3>
+                    <p>Reliable single pin solutions for various applications</p>
+                    <a href="product-details.html#single-pin" class="category-btn">View Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://5.imimg.com/data5/FE/WL/FF/SELLER-44250643/control-system-and-home-automation-500x500.jpg" alt="Product 1">
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Controller Pro</h3>
+                        <p>Advanced control system for your smart home</p>
+                        <div class="product-features">
+                            <span>WiFi Enabled</span>
+                            <span>Voice Control</span>
+                            <span>Mobile App</span>
+                        </div>
+                        <!-- <a href="#" class="product-btn">Learn More</a> -->
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://iotbusinessnews.com/WordPress/wp-content/uploads/private-industrial-iot-network.jpg" alt="Product 2">
+                    </div>
+                    <div class="product-info">
+                        <h3>IoT Gateway</h3>
+                        <p>Connect all your devices seamlessly</p>
+                        <div class="product-features">
+                            <span>Multiple Protocols</span>
+                            <span>Cloud Integration</span>
+                            <span>Real-time Monitoring</span>
+                        </div>
+                        <!-- <a href="#" class="product-btn">Learn More</a> -->
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://securitybrief.com.au/uploads/story/2022/10/25/GettyImages-1174652880.webp" alt="Product 3">
+                    </div>
+                    <div class="product-info">
+                        <h3>Security Camera AI</h3>
+                        <p>Intelligent surveillance with AI capabilities</p>
+                        <div class="product-features">
+                            <span>Face Recognition</span>
+                            <span>Motion Detection</span>
+                            <span>Night Vision</span>
+                        </div>
+                        <!-- <a href="#" class="product-btn">Learn More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <div class="footer-container">
+            <section class="footer-section">
+                <!-- Company Info -->
+                <div class="company-content">
+                    <img src="../images/smart.png" alt="Logo" class="logo">
+                    <p class="company-description">
+                        We help businesses grow by delivering high-quality, innovative solutions tailored to your needs.
+                    </p>
+                    <a href="../index.html" class="know-more-btn">Know More</a>
+                </div>
+                <!-- Important Links -->
+                <div class="important-links">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="../index.html"><strong>Home</strong></a></li>
+                        <li><a href="../pages/product.html"><strong>Our Products</strong></a></li>
+                        <li><a href="../pages/services.html"><strong>Our Services</strong></a></li>
+                        <li><a href="../pages/blogs.html"><strong>Blogs</strong></a></li>
+                    </ul>
+                </div>
+                <!-- Office Details -->
+                <div class="office-section">
+                    <h3>Office Details</h3>
+                    <div class="office-details">
+                        <p><strong>Address:</strong> SMARTHINKING Technology and Solutions Pvt Ltd 545-A, Boulevard Tower, Sadhu Vaswani Chowk, Agarka Nagar, Pune, Maharashtra, 411001</p>
+                        <p><strong>Landline:</strong> 02069015368</p>
+                        <p><strong>Email:</strong> info@smarthinking.in</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 SMARTHINKING Technology and Solutions Pvt Ltd. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js">// Function to handle navigation programmatically (if needed)
+        function navigateTo(url) {
+            window.location.href = url; // This will redirect the user to the given URL
+        }
+        </script>
+</body>
+</html>

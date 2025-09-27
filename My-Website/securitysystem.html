@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security Systems | Venus MEP</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #f0f4f8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://www.frost.com/wp-content/uploads/2023/01/Picture4-scaled.jpg') center/cover no-repeat;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #0a3d62;
+      margin-bottom: 2rem;
+    }
+
+    .security-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .security-image {
+  flex: 1 1 45%;
+}
+.security-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+    .security-content img {
+      flex: 1 1 45%;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .security-text {
+      flex: 1 1 50%;
+    }
+
+    .security-text h3 {
+      color: #e74c3c;
+      margin-bottom: 1rem;
+    }
+
+    .security-text ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .security-text ul li {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .security-text ul li::before {
+      content: "🔒";
+      margin-right: 0.5rem;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+ <!-- Navigation Section -->
+ <nav>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/product.html">Our Products</a></li>
+        <li><a href="../pages/services.html" class="active">Our Services</a></li>
+        <li><a href="../pages/blogs.html">Blogs</a></li>
+    </ul>
+  </nav>
+  
+<a href="../pages/contact.html" class="contact-btn-standalone" onclick="navigateTo('../pages/contact.html')">
+    <i class="fas fa-envelope"></i> Get in Touch
+    <i class="header__btn-dots"><span></span><span></span><span></span></i>
+</a>
+
+<header>
+  <h1>Advanced Security Systems</h1>
+</header>
+
+<section class="section">
+  <h2>Protect What Matters Most</h2>
+  <div class="security-content">
+    <div class="security-image">
+      <img src="https://esecuritysystem.in/esecurity/uploads/2021/08/welcome.jpg" alt="Security System">
+    </div>
+    <div class="security-text">
+      <h3>Comprehensive Protection Solutions</h3>
+      <p>Our smart and scalable security systems ensure 24/7 protection for homes, commercial buildings, and industrial sites.</p>
+      <ul>
+        <li>24/7 real-time surveillance</li>
+        <li>Smart motion detection & facial recognition</li>
+        <li>Access control with biometric & RFID</li>
+        <li>Integrated emergency alert systems</li>
+        <li>Cloud storage & mobile access</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- Footer -->
+ <footer class="custom-footer">
+    <div class="footer-container">
+      <section class="footer-section">
+         <!-- Company Info -->
+         <div class="company-content">
+            <img src="logo.png" alt="Company Logo" class="company-logo">
+            <p class="company-description">
+              We help businesses grow by delivering high-quality, innovative solutions tailored to your needs.
+            </p>
+            <a href="../index.html" class="know-more-btn">Know More</a>
+          </div>
+         <!-- Important Links -->
+           <div class="important-links">
+             <h3>Important Links</h3>
+         <ul>
+              <li><a href="../index.html"><strong>Home</strong></a></li>
+              <li><a href="../pages/product.html"><strong>Our Products</strong></a></li>
+              <li><a href="../pages/services.html"><strong>Our Services</strong></a></li>
+              <li><a href="../pages/blogs.html"><strong>Blogs</strong></a></li>
+        </ul>
+    </div>
+  
+  
+        <!-- Office Details -->
+        <div class="office-section">
+          <h3>Office Details</h3>
+          <div class="office-details">
+            <p><strong>Address:</strong> SMARTHINKING Technology and Solutions Pvt Ltd 545-A, Boulevard Tower, Sadhu Vaswani Chowk, Agarka Nagar, Pune, Maharashtra, 411001</p>
+            <p><strong>Landline:</strong>  02069015368</p>
+            <p><strong>Email:</strong> info@smarthinking.in</p>
+          </div>
+  
+        </div>
+      </section>
+  
+      <!-- Bottom Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SMARTHINKING Technology and Solutions Pvt Ltd. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
