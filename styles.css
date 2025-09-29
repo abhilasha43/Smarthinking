@@ -1,0 +1,399 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 70px; /* Space for fixed header */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Base Header/Navigation Styles */
+.header-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #343a40; /* Dark background for visibility */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Logo Adjustment */
+.logo-overlay .company-logo {
+  height: 543px; /* Standard size for header logo */
+  width: auto;
+  margin-top: 65px;
+  margin-left: -55px;
+}
+
+/* Desktop Navigation Styles */
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 74px;
+  display: flex;
+}
+
+.main-nav li {
+  position: relative;
+  margin-left: 20px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #28a745; /* Green hover */
+}
+
+/* Dropdown Styles */
+.main-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+  border-radius: 5px;
+  top: 100%;
+  left: 0;
+}
+.main-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.main-nav .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 0.95em;
+}
+
+/* Contact Button (Standalone/Desktop) */
+.contact-btn-standalone {
+  background-color: #28a745;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-btn-standalone:hover {
+  background-color: #218838;
+}
+
+/* Mobile Menu Toggle (3 Dots) - Hidden by default */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; /* Ensure it is clickable */
+}
+
+/* Mobile Navigation Dropdown */
+.mobile-nav-dropdown {
+    position: fixed; /* Fixed so it overlays content */
+    top: 60px; /* Adjust based on header height */
+    right: 0;
+    width: 100%;
+    max-width: 300px; /* Set max width for better appearance */
+    background-color: rgba(33, 37, 41, 0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    /* Initially hidden, JS will toggle 'active' class */
+    display: none; 
+}
+
+.mobile-nav-dropdown.active {
+    display: block;
+}
+
+.mobile-nav-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-dropdown li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-nav-dropdown li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #28a745;
+}
+
+/* Explore Electronics Section */
+.explore-electronics {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.explore-electronics .content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  z-index: 10;
+}
+
+/* What We Do Section */
+.what-we-do {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.what-we-do h2 {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.what-we-do p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Video Section */
+.demo-video {
+  padding: 60px 0;
+  text-align: center;
+}
+.demo-video .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.video-wrapper {
+  flex: 1;
+  max-width: 50%;
+}
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+}
+.video-description {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+.video-description h3 {
+  font-size: 35px;
+  color: #000;
+  margin: 0;
+}
+/* Ensure the inner video element itself is correctly sized */
+.demo-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* --- Custom Footer Styles --- */
+.custom-footer {
+  background-color: #000;
+  color: white;
+  position: relative;
+  padding: 40px 0 10px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+/* Logo in Footer */
+.company-content .company-logo {
+  height: 50px;
+  margin-bottom: 15px;
+  /* Remove negative margin */
+  margin-top: 0; 
+  position: static; 
+}
+
+.company-content, .important-links, .office-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.company-description {
+  font-size: 16px;
+  margin-top: -300px; /* Remove negative margin */
+  margin-bottom: 15px;
+}
+
+.important-links h3, .office-section h3 {
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.important-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.important-links ul li a {
+  color: #f8f9fa;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9em;
+  padding-top: 10px;
+}
+
+
+/* --- Media Queries for Responsive Design --- */
+
+/* Tablets and smaller desktops (max-width: 991.98px) */
+@media (max-width: 991.98px) {
+    /* Hide desktop navigation and show mobile toggle */
+    .main-nav,
+    .contact-btn-standalone {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Show the 3-dot icon */
+    }
+    
+    .explore-electronics .content {
+        left: 5%; /* Adjust content position slightly */
+    }
+
+    /* Video section adjustment to stack */
+    .demo-video .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .video-wrapper, .video-description {
+      max-width: 100%;
+      text-align: center;
+    }
+    .video-description h3 {
+      font-size: 28px;
+    }
+
+    /* Footer adjustments (2 columns on tablets) */
+    .footer-section {
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .company-content, .important-links, .office-section {
+      flex: 1 1 calc(50% - 20px);
+      min-width: 40%;
+    }
+}
+
+
+/* Mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+    body {
+      padding-top: 60px; /* Adjust padding for slightly shorter header */
+    }
+    .header-content {
+      padding: 8px 15px;
+    }
+    .logo-overlay .company-logo {
+      height: 35px; /* Smaller logo on mobile */
+    }
+    
+    .explore-electronics .content {
+      top: 20%; /* Move content higher up to be visible */
+      left: 0;
+      padding: 0 15px;
+      transform: none;
+      text-align: center;
+      width: 100%;
+    }
+    .explore-electronics .content h2, 
+    .explore-electronics .content h1 {
+      font-size: 2rem;
+    }
+    .explore-electronics .content p {
+      font-size: 1rem;
+    }
+
+    /* Footer adjustments (1 column on mobile) */
+    .footer-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+    .company-content, .important-links, .office-section {
+      flex: 1 1 100%;
+      min-width: 100%;
+    }
+    .important-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
