@@ -48,15 +48,17 @@ body {
 /* Desktop Navigation Styles */
 .main-nav ul {
   list-style: none;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  gap: 74px;
+  margin-left: -185%;
+  gap: 55px;
   display: flex;
 }
 
 .main-nav li {
   position: relative;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .main-nav a {
@@ -99,20 +101,29 @@ body {
 
 /* Contact Button (Standalone/Desktop) */
 .contact-btn-standalone {
-  background-color: #28a745;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    position: fixed;
+    bottom: 842px;
+    right: 20px;
+    background: linear-gradient(90deg, #ec7017, #285feb);
+    color: white;
+    padding: 1rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    height: 55px;
+    width: 201px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #2c3e50;
+    font-size: 16px;
 }
 
-.contact-btn-standalone:hover {
-  background-color: #218838;
+.contact-btn-standalone{
+  font-size:1.2rem;
 }
 
 /* Mobile Menu Toggle (3 Dots) - Hidden by default */
@@ -359,9 +370,15 @@ body {
     }
     .header-content {
       padding: 8px 15px;
+      margin-top: -10px ;
+      color: #ffffff;
     }
     .logo-overlay .company-logo {
-      height: 35px; /* Smaller logo on mobile */
+      height: 399px; /* Smaller logo on mobile */
+      position: fixed;
+      width: auto;
+      margin-left: -48px;
+      margin-top: -172px;
     }
     
     .explore-electronics .content {
@@ -370,14 +387,23 @@ body {
       padding: 0 15px;
       transform: none;
       text-align: center;
+      display: inline;
       width: 100%;
     }
-    .explore-electronics .content h2, 
+    .explore-electronics .content h2{ 
+         font-size: 32px;
+       display: inline;
+       color: #ec7017;
+  }
     .explore-electronics .content h1 {
-      font-size: 2rem;
+      font-size: 32px;
+       display: inline; 
+      
     }
     .explore-electronics .content p {
-      font-size: 1rem;
+      font-size: 20.5px;
+       display: inline-block; 
+      
     }
 
     /* Footer adjustments (1 column on mobile) */
@@ -390,6 +416,7 @@ body {
     .company-content, .important-links, .office-section {
       flex: 1 1 100%;
       min-width: 100%;
+      margin-left: -25px;
     }
     .important-links ul {
         display: flex;

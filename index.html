@@ -37,38 +37,56 @@
         }
 
         /* --- Desktop Navigation Styles (main-nav) --- */
-        .main-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
+       .main-nav ul {
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-left: -135%;
+  gap: 55px;
+  display: flex;
+}
 
-        .main-nav li {
-            margin-left: 20px;
-        }
+.main-nav li {
+  position: relative;
+  margin-left: 30px;
+}
 
-        .main-nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-            font-weight: 500;
-        }
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
         .contact-btn-standalone {
-            background-color: #28a745;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+    position: fixed;
+    bottom: 842px;
+    right: 20px;
+    background: linear-gradient(90deg, #ec7017, #285feb);
+    color: white;
+    padding: 1rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    height: 55px;
+    width: 201px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #2c3e50;
+    font-size: 16px;
+}
 
-        .contact-btn-standalone:hover {
-            background-color: #218838;
-        }
+        
+.contact-btn-standalone{
+  font-size:1.2rem;
+}
 
         /* Dropdown content styles remain the same for desktop (omitted for brevity) */
         /* ... existing dropdown styles ... */
@@ -150,11 +168,15 @@
 
         /* --- Footer Logo Adjustment --- */
         .custom-footer .company-logo {
-            height: 580px; /* Slightly larger logo in the footer */
+            height: 459px; /* Slightly larger logo in the footer */
             width: auto;
-            margin-top: -235px;
-            margin-left: -66px;
+            margin-top: -190px;
+            margin-left: -5px;
 
+        }
+         
+        .custom-footer .company-description{
+            margin-top: -225px;
         }
         
         /* --- Remaining CSS (Existing Styles) --- */
@@ -268,7 +290,7 @@
 
         .know-more-btn {
             display: inline-block;
-            background-color: #28a745;
+            background: linear-gradient(90deg, #ec7017, #285feb);
             color: #fff;
             padding: 8px 20px;
             width: 45%;
@@ -430,6 +452,45 @@
                 font-size: 0.9em;
             }
         }
+         /* Hide the sub-menu by default */
+    .mobile-nav-dropdown .mobile-service-sub-menu {
+        display: none; /* KEY: This hides the sub-menu */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Show the sub-menu when the 'active' class is added by JavaScript */
+    .mobile-dropdown-toggle.active .mobile-service-sub-menu {
+        display: block; /* KEY: This shows the sub-menu when active */
+    }
+
+    /* Style for the arrow icon */
+    .mobile-dropdown-toggle a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-arrow {
+        transition: transform 0.3s ease; /* For smooth rotation */
+        margin-left: 10px;
+    }
+
+    /* Rotate the arrow when the dropdown is active */
+    .mobile-dropdown-toggle.active .mobile-arrow {
+        transform: rotate(180deg);
+    }
+    
+    /* Style the actual sub-links */
+    .mobile-nav-dropdown .mobile-service-sub-menu li a {
+        /* Indent the sub-links */
+        padding: 10px 20px 10px 40px; 
+        font-size: 0.9em;
+        font-weight: 400;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
     /* --- Custom Footer Styles (Adjusted for responsiveness) --- */
     .custom-footer {
@@ -456,6 +517,7 @@
         flex: 1;
         min-width: 250px; /* Minimum width for each column */
         margin-bottom: 20px;
+        
         padding: 0 10px;
     }
 
@@ -511,6 +573,27 @@
     </style>
 </head>
 <body>
+    <nav class="mobile-nav-dropdown" id="mobileNavDropdown">
+    <ul>
+        <li><a href="index.html" onclick="navigateTo('index.html')">Home</a></li>
+        <li><a href="pages/product.html" onclick="navigateTo('pages/product.html')">Our Product</a></li> 
+        
+        <li class="mobile-dropdown-toggle">
+            <a href="pages/services.html" onclick="event.preventDefault(); return false;">
+                Our Services <span class="fas fa-chevron-down mobile-arrow"></span>
+            </a>
+
+            <ul class="mobile-service-sub-menu">
+                <li><a href="#web-development">Web Development</a></li>
+                <li><a href="#iot-solutions">IOT Solutions</a></li>
+                <li><a href="#digital-marketing">Digital Marketing</a></li>
+                <li><a href="#graphic-design">Graphic Design</a></li>
+            </ul>
+        </li>
+       <li><a href="pages/blogs.html" onclick="navigateTo('pages/blogs.html')">Blogs</a></li>
+        <li><a href="pages/contact.html" onclick="navigateTo('pages/contact.html')">Get in Touch</a></li>
+    </ul>
+</nav>
     <header class="header-content fixed">
         <a href="index.html" class="logo-overlay">
            <img src="images/smart.png" alt="Company Logo" class="company-logo">
@@ -667,6 +750,94 @@
                 });
             }
         });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.getElementById('mobileMenuToggle');
+        const dropdownMenu = document.getElementById('mobileNavDropdown');
+        const serviceToggle = document.querySelector('.mobile-dropdown-toggle');
+
+        if (toggleButton && dropdownMenu) {
+            // This is the key part that makes the 3 dots clickable
+            toggleButton.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('active');
+            });
+
+            // ... (rest of your existing logic for closing the menu and service dropdown) ...
+        }
+
+        // --- NEW SERVICE DROPDOWN TOGGLE LOGIC (from previous step) ---
+        if (serviceToggle) {
+            serviceToggle.querySelector('a').addEventListener('click', (e) => {
+                e.preventDefault(); 
+                serviceToggle.classList.toggle('active');
+            });
+            
+            serviceToggle.querySelectorAll('.mobile-service-sub-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('active');
+                });
+            });
+        }
+        // --- END NEW SERVICE DROPDOWN TOGGLE LOGIC ---
+    });
+
+    // Keep the navigateTo function if it's used elsewhere
+    function navigateTo(url) {
+        console.log('Navigating to:', url);
+    }
+
+
+
+
+       document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.getElementById('mobileMenuToggle');
+        const dropdownMenu = document.getElementById('mobileNavDropdown');
+        const serviceToggle = document.querySelector('.mobile-dropdown-toggle'); // New selector
+
+        // Existing main menu toggle logic
+        if (toggleButton && dropdownMenu) {
+            toggleButton.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('active');
+            });
+            
+            // Close main menu when a link is clicked
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only close the main menu if it's not the service parent link
+                    if (!link.closest('.mobile-dropdown-toggle')) {
+                         dropdownMenu.classList.remove('active');
+                    }
+                });
+            });
+        }
+
+        // --- NEW SERVICE DROPDOWN TOGGLE LOGIC ---
+        if (serviceToggle) {
+            serviceToggle.querySelector('a').addEventListener('click', (e) => {
+                // Prevent the link from navigating to "pages/services.html"
+                e.preventDefault(); 
+                
+                // Toggle the 'active' class on the parent LI to show/hide the UL
+                serviceToggle.classList.toggle('active');
+            });
+            
+            // Allow the sub-menu links to navigate and close the main mobile menu
+            serviceToggle.querySelectorAll('.mobile-service-sub-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Close the main mobile menu when a sub-link is clicked
+                    dropdownMenu.classList.remove('active');
+                });
+            });
+        }
+        // --- END NEW SERVICE DROPDOWN TOGGLE LOGIC ---
+    });
+
+    // Keep the navigateTo function if it's used elsewhere
+    function navigateTo(url) {
+        console.log('Navigating to:', url);
+        // This function is placeholder; actual navigation would be handled by the browser
+    }
     </script>
 </body>
 </html>
